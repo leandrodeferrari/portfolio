@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "leandro-deferrari-arevalo": {
+      "hosting": {
+        "portfolio": [
+          "leandro-deferrari-arevalo"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "leandro-deferrari-arevalo"
+  }
+}
