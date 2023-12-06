@@ -1,0 +1,12 @@
+<div *ngIf="work" class="resume-item">
+  <h4>{{work.name}} - <em>{{work.jobExperienceTypeName}}</em></h4>
+  <div *ngIf="work.isCurrentJob">
+    <h5>{{work.startDate}} -<em>Actualidad</em></h5>
+  </div>
+  <div *ngIf="!work.isCurrentJob">
+    <h5>{{work.startDate}} - {{work.endDate}}</h5>
+  </div>
+  <p><em>Empresa: {{work.business}}</em></p>
+  <p>{{work.description}}</p>
+  <p>Tecnologías utilizadas: {{work.technologies}}</p>
+</div>

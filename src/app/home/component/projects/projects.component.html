@@ -1,0 +1,10 @@
+<div class="row font-secondary">
+  <div data-aos="fade-up">
+    <h3 class="resume-title text-uppercase">Proyectos</h3>
+    <div *ngIf="projects">
+      <div *ngFor="let project of projects">
+        <app-project [project]=project></app-project>
+      </div>
+    </div>
+  </div>
+</div>

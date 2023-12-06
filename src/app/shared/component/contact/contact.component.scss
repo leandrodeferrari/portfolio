@@ -1,0 +1,74 @@
+.footer-paralax {
+    padding: 4rem 0 0 0;
+}
+
+section {
+    background-image: url(https://res.cloudinary.com/dwirzebm8/image/upload/v1672687495/portfolio/wallpaperflare.com_wallpaper_2_j5ckxl.jpg);
+}
+
+.contact-mf {
+    margin-top: 4rem;
+}
+
+@media (min-width: 767px) {
+    .contact-mf .box-pl2 {
+        margin-top: 3rem;
+        padding-left: 0rem;
+    }
+}
+
+@-webkit-keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*------/ Socials /------*/
+
+.socials {
+    padding: 1.5rem 0;
+}
+
+.socials a {
+    color: #000000;
+}
+
+.disabled {
+    background-color: gray;
+}
+
+.socials ul li {
+    display: inline-block;
+}
+
+.socials .ico-circle {
+    height: 40px;
+    width: 40px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    line-height: 1.6;
+    margin: 0 15px 0 0;
+    box-shadow: 0 0 0 3px #0d0e0e;
+    transition: all 500ms ease;
+}
+
+.socials .ico-circle:hover {
+    background-color: #202123;
+    color: #fff;
+    box-shadow: 0 0 0 3px #ffffff;
+    transition: all 500ms ease;
+}

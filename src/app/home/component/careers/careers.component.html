@@ -1,0 +1,10 @@
+<div class="row font-secondary" id="careers">
+  <div data-aos="fade-up">
+    <h3 class="resume-title text-uppercase">Carreras y tecnicaturas</h3>
+    <div *ngIf="careers">
+      <div *ngFor="let career of careers">
+        <app-career [career]=career></app-career>
+      </div>
+    </div>
+  </div>
+</div>

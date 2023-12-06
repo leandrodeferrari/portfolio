@@ -1,0 +1,16 @@
+<div *ngIf="course" class="resume-item mb-3">
+  <h4>{{course.title}}</h4>
+  <div *ngIf="course.isApproved">
+    <h5><em>Aprobado</em> {{course.startDate}} - {{course.endDate}}</h5>
+  </div>
+  <div *ngIf="!course.isApproved">
+    <h5><em>En curso</em> {{course.startDate}} - {{course.endDate}}</h5>
+  </div>
+  <p><em>{{course.InstituteUniversity}}</em></p>
+  <p>{{course.description}}</p>
+  <a href='{{course.certificateURL}}' target="_blank">
+    <button class="btn btn-dark btn-sm" type="button">
+      Ver Certificado
+    </button>
+  </a>
+</div>

@@ -1,0 +1,17 @@
+<div *ngIf="career" class="resume-item mb-3">
+  <h4>{{career.careerTypeName}} en {{career.name}}</h4>
+  <div *ngIf="career.isFinished">
+    <h5><em>Finalizada</em> {{career.startDate}} - {{career.endDate}}</h5>
+  </div>
+  <div *ngIf="!career.isFinished">
+    <h5><em>En curso</em> {{career.startDate}} - {{career.endDate}}</h5>
+  </div>
+  <p><em>{{career.instituteUniversity}}</em></p>
+  <p>{{career.description}}</p>
+  <p>Materias aprobadas: {{career.approvedSubjects}} - Materias totales: {{career.totalSubjects}}</p>
+  <a href='{{career.studyPlanURL}}' target="_blank">
+    <button class="btn btn-dark btn-sm" type="button">
+      Ver Plan de Estudio
+    </button>
+  </a>
+</div>

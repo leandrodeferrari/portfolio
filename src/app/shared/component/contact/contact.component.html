@@ -1,0 +1,112 @@
+<section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route"
+  style="background-image: url(https://res.cloudinary.com/dwirzebm8/image/upload/v1672687495/portfolio/wallpaperflare.com_wallpaper_2_j5ckxl.jpg)">
+  <div class="overlay-mf"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="contact-mf">
+          <div id="contact" class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="title-box-2">
+                  <h5 class="title-left font-primary">
+                    Contactarme
+                  </h5>
+                </div>
+                <div *ngIf="sent === 'Yes'" class="alert alert-success alert-dismissible fade show" role="alert">
+                  <i style="margin-right: 5px;" class="bi bi-check-circle"></i> <strong>Mensaje enviado.</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="sent === 'No'" class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>No se pudo enviar el mensaje.</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="font-secondary">
+                  <form [formGroup]="formContact" (ngSubmit)="onSubmit($event)">
+                    <div class="row">
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('name')?.hasError('required') || formContact.get('name')?.pristine">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El nombre es obligatorio.</strong>
+                          </div>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('name')?.hasError('maxlength')">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El nombre no puede tener más de 50 caracteres.</strong>
+                          </div>
+                          <input type="text" formControlName="name" name="name" class="form-control" id="name" placeholder="Tu nombre..."
+                            required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('email')?.hasError('required') || formContact.get('email')?.pristine">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El email es obligatorio.</strong>
+                          </div>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('email')?.hasError('email')">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El email es inválido.</strong>
+                          </div>
+                          <input type="email" formControlName="email" class="form-control" name="email" id="email" placeholder="Tu email..."
+                            required>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('message')?.hasError('required') || formContact.get('message')?.pristine">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El mensaje es obligatorio.</strong>
+                          </div>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('message')?.hasError('maxlength')">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El mensaje no puede tener más de 500 caracteres.</strong>
+                          </div>
+                          <textarea class="form-control" formControlName="message" name="message" rows="5" placeholder="Mensaje..."
+                            required></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-center mt-3">
+                        <button type="submit" class="button button-a button-sm button-rouded" [ngClass]="{'disabled' : formContact.invalid}" [disabled]="formContact.invalid">Enviar mensaje</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div *ngIf="contact" class="col-md-6 font-secondary">
+                <div class="title-box-2 pt-2 pt-md-0 mb-3">
+                  <h5 class="title-left font-primary">
+                    Mis redes sociales
+                  </h5>
+                </div>
+                <div class="more-info mt-5">
+                  <p class="mb-0">En este apartado, encontrarán:</p>
+                  <ul class="p-1">
+                    <li>
+                      <strong>Mi GitHub:</strong> En donde podrán ver lo que vengo desarrollando.
+                    </li>
+                    <li>
+                      <strong>Mi LinkedIn:</strong> En donde subo publicaciones, logros, etc.
+                    </li>
+                    <li>
+                      <strong>Mi CV:</strong> Drive en donde encontrarán mi Curriculum Vitae más actualizado.
+                    </li>
+                  </ul>
+                  <ul class="list-ico">
+                    <li><span class="bi bi-geo-alt"></span>{{contact.address}}</li>
+                    <li><span class="bi bi-envelope"></span><strong>{{contact.email}}</strong></li>
+                  </ul>
+                </div>
+                <div class="socials">
+                  <ul>
+                    <li><a title="GitHub" href='{{contact.gitHubURL}}' target="_blank" rel="noopener noreferrer"><span
+                          class="ico-circle"><i class="bi bi-github"></i></span></a></li>
+                    <li><a title="LinkedIn" href='{{contact.linkedInURL}}' target="_blank"
+                        rel="noopener noreferrer"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a>
+                    </li>
+                    <li><a title="ver CV en Google Drive" href='{{contact.cvURL}}'
+                        target="_blank" rel="noopener noreferrer"><span class="ico-circle"><i class="bi bi-file-person-fill"></i></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
