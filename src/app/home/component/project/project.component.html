@@ -1,10 +1,10 @@
 <div *ngIf="project" class="resume-item mb-3">
   <h4>{{project.name}}</h4>
   <div *ngIf="project.isFinished">
-    <h5><em>Aprobado</em> {{project.startDate}} - {{project.endDate}}</h5>
+    <h5>{{project.startDate}} - {{project.endDate}}</h5>
   </div>
   <div *ngIf="!project.isFinished">
-    <h5><em>En curso</em> {{project.startDate}} - {{project.endDate}}</h5>
+    <h5>{{project.startDate}} - <em>En curso</em></h5>
   </div>
   <p><em>{{project.business}}</em></p>
   <p>{{project.description}}</p>

@@ -8,19 +8,19 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#hero">Inicio</a>
+          <a class="nav-link active" href="#hero" (click)="cerrarMenu()">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about">Acerca de mí</a>
+          <a class="nav-link" href="#about" (click)="cerrarMenu()">Acerca de mí</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#studies" id="btn-dropdown-studies" role="button"
             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Estudios
           </a>
-          <ul class="dropdown-menu" aria-labelledby="btn-dropdown-studies">
-            <li><a class="dropdown-item" href="#careers">Carreras y tecnicaturas</a></li>
-            <li><a class="dropdown-item" href="#courses">Cursos y capacitaciones</a></li>
+          <ul class="dropdown-menu" aria-labelledby="btn-dropdown-studies" style="background-color: #212529;">
+            <li><a class="dropdown-item submenu" href="#careers" (click)="cerrarMenu()">Carreras y tecnicaturas</a></li>
+            <li><a class="dropdown-item submenu" href="#courses" (click)="cerrarMenu()">Cursos y capacitaciones</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -28,16 +28,16 @@
             data-bs-toggle="dropdown" aria-expanded="false">
             Experiencia
           </a>
-          <ul class="dropdown-menu" aria-labelledby="btn-dropdown-experience">
-            <li><a class="dropdown-item" href="#work">Laboral</a></li>
-            <li><a class="dropdown-item" href="#projects">Proyectos</a></li>
+          <ul class="dropdown-menu" aria-labelledby="btn-dropdown-experience" style="background-color: #212529;">
+            <li><a class="dropdown-item submenu" href="#work" (click)="cerrarMenu()">Laboral</a></li>
+            <li><a class="dropdown-item submenu" href="#projects" (click)="cerrarMenu()">Proyectos</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#knowledge">Conocimientos</a>
+          <a class="nav-link" href="#knowledge" (click)="cerrarMenu()">Conocimientos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contacto</a>
+          <a class="nav-link" href="#contact" (click)="cerrarMenu()">Contacto</a>
         </li>
       </ul>
     </div>
