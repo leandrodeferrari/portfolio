@@ -21,7 +21,7 @@ export class ContactService {
     let data: Contact | null = null;
 
     if (contact === null) {
-      const docRef = doc(this.firestore, "contacts", environment.user_id);
+      const docRef = doc(this.firestore, "contact", environment.user_id);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {

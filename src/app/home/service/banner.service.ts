@@ -17,7 +17,7 @@ export class BannerService {
     let data: Banner | null = null;
 
     if (banner === null) {
-      const docRef = doc(this.firestore, "banners", environment.user_id);
+      const docRef = doc(this.firestore, "banner", environment.user_id);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
