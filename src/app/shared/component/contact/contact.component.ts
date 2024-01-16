@@ -17,6 +17,12 @@ export class ContactComponent {
     email: ['', [Validators.required, Validators.email]]
   });
   sent: string = '';
+  currentColorButton: string = 'btn-dark';
+  currentIcon: string = 'bi-copy';
+  private temporalColorButton: string = 'btn-success';
+  private temporalIcon: string = 'bi-check';
+  private darkButton: string = 'btn-dark';
+  private copyIcon: string = 'bi-copy';
 
   constructor(private contactService: ContactService, private formBuilder: FormBuilder) { }
 
@@ -26,6 +32,18 @@ export class ContactComponent {
     }).catch((e) => {
       this.contact = null;
     });
+  }
+
+  changeIcon(): void{
+    if(this.currentIcon === 'bi-copy'){
+      this.currentIcon = this.temporalIcon;
+      this.currentColorButton = this.temporalColorButton;
+
+      setTimeout(() => {
+        this.currentIcon = this.copyIcon;
+        this.currentColorButton = this.darkButton;
+      }, 2000);
+    }
   }
 
   onSubmit(event: Event){
