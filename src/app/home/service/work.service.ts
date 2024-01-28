@@ -12,8 +12,16 @@ export class WorkService {
   constructor() { }
 
   async getAll(): Promise<Work[] | null>{
-    let works = sessionStorage.getItem('works');
+    let works: string | null = sessionStorage.getItem('works');
     let data: Work[] = [];
+
+    if(works){
+      let worksOfSessionStorage: Work[] = JSON.parse(works);
+
+      if (!worksOfSessionStorage.every(work => Array.isArray(work.technologies))){
+        works = null;
+      }
+    }
 
     if(works === null){
       const querySnapshot = await getDocs(collection(this.firestore, "works"));

@@ -12,8 +12,16 @@ export class ProjectService {
   constructor() { }
 
   async getAll(): Promise<Project[] | null>{
-    let projects = sessionStorage.getItem('projects');
+    let projects: string | null = sessionStorage.getItem('projects');
     let data: Project[] = [];
+
+    if(projects){
+      let projectsOfSessionStorage: Project[] = JSON.parse(projects);
+
+      if (!projectsOfSessionStorage.every(project => project.hasOwnProperty('technologies'))){
+        projects = null;
+      }
+    } 
 
     if(projects === null){
       const querySnapshot = await getDocs(collection(this.firestore, "projects"));

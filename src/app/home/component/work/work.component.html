@@ -8,5 +8,10 @@
   </div>
   <p><i class="bi bi-building margin-building-icon"></i> <em>{{work.business}}</em></p>
   <p>{{work.description}}</p>
-  <p><i class="bi bi-pc-display-horizontal"></i> {{work.technologies}}</p>
+  <div class="work-technologies">
+    <i class="bi bi-pc-display-horizontal pc-display-horizontal-icon"></i>
+    <img class="technology-logo" [src]="work.technologies[0]">
+    <img class="technology-logo" [src]="work.technologies[1]">
+    <img class="technology-logo" [src]="work.technologies[2]">
+  </div>
 </div>

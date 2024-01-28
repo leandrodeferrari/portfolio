@@ -4,3 +4,14 @@
     border-left: 2px solid #232528;
     position: relative;
 }
+
+.work-technologies {
+    display: flex;
+    align-items: center;
+}
+
+.technology-logo {
+    width: 75px;
+    height: auto;
+    margin-right: 7px;
+}

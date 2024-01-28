@@ -7,4 +7,5 @@ export interface Project {
     description: string;
     evidenceURL: string;
     business: string;
+    technologies: string[];
 }

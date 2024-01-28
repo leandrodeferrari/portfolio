@@ -8,5 +8,5 @@ export interface Work {
     seniorityName: string;
     jobExperienceTypeName: string;
     business: string;
-    technologies: string;
+    technologies: string[];
 }
