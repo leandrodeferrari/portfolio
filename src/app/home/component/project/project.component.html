@@ -1,12 +1,12 @@
 <div *ngIf="project" class="resume-item">
   <h4>{{project.name}}</h4>
   <div *ngIf="project.isFinished">
-    <h5>{{project.startDate}} - {{project.endDate}}</h5>
+    <h5><i class="bi bi-calendar3"></i> {{project.startDate}} - {{project.endDate}}</h5>
   </div>
   <div *ngIf="!project.isFinished">
-    <h5>{{project.startDate}} - <em>En curso</em></h5>
+    <h5><i class="bi bi-calendar3"></i> {{project.startDate}} - <em>En curso</em></h5>
   </div>
-  <p><em>{{project.business}}</em></p>
+  <p><i class="bi bi-building margin-building-icon"></i> <em>{{project.business}}</em></p>
   <p>{{project.description}}</p>
   <a href='{{project.evidenceURL}}' target="_blank">
     <button class="btn btn-dark btn-sm" type="button">

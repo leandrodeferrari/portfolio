@@ -1,12 +1,12 @@
 <div *ngIf="work" class="resume-item">
   <h4>{{work.name}}</h4>
   <div *ngIf="work.isCurrentJob">
-    <h5>{{work.startDate}} -<em>Actualidad</em></h5>
+    <h5><i class="bi bi-calendar3"></i> {{work.startDate}} -<em>Actualidad</em></h5>
   </div>
   <div *ngIf="!work.isCurrentJob">
-    <h5>{{work.startDate}} - {{work.endDate}}</h5>
+    <h5><i class="bi bi-calendar3"></i> {{work.startDate}} - {{work.endDate}}</h5>
   </div>
-  <p><em>Empresa: {{work.business}}</em></p>
+  <p><i class="bi bi-building margin-building-icon"></i> <em>{{work.business}}</em></p>
   <p>{{work.description}}</p>
-  <p>Tecnologías utilizadas: {{work.technologies}}</p>
+  <p><i class="bi bi-pc-display-horizontal"></i> {{work.technologies}}</p>
 </div>

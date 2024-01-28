@@ -1,12 +1,12 @@
 <div *ngIf="course" class="resume-item">
   <h4>{{course.title}}</h4>
   <div *ngIf="course.isApproved">
-    <h5><em><strong>Aprobado</strong></em> {{course.startDate}} - {{course.endDate}}</h5>
+    <h5><i class="bi bi-calendar3"></i> {{course.startDate}} - {{course.endDate}}</h5>
   </div>
   <div *ngIf="!course.isApproved">
-    <h5>{{course.startDate}} - <em>En curso</em></h5>
+    <h5><i class="bi bi-calendar3"></i> {{course.startDate}} - <em>En curso</em></h5>
   </div>
-  <p><em>{{course.InstituteUniversity}}</em></p>
+  <p><i class="bi bi-building margin-building-icon"></i> <em>{{course.InstituteUniversity}}</em></p>
   <p>{{course.description}}</p>
   <a href='{{course.certificateURL}}' target="_blank">
     <button class="btn btn-dark btn-sm" type="button">
