@@ -18,7 +18,8 @@
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <div *ngIf="sent === 'No'" class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>No se pudo enviar el mensaje.</strong>
+                  <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>No se pudo enviar el
+                    mensaje.</strong>
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <div class="font-secondary">
@@ -26,42 +27,56 @@
                     <div class="row">
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
-                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('name')?.hasError('required') || formContact.get('name')?.pristine">
-                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El nombre es obligatorio.</strong>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                            [hidden]="!formContact.get('name')?.hasError('required') || formContact.get('name')?.pristine">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El nombre es
+                              obligatorio.</strong>
                           </div>
-                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('name')?.hasError('maxlength')">
-                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El nombre no puede tener más de 50 caracteres.</strong>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                            [hidden]="!formContact.get('name')?.hasError('maxlength')">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El nombre no
+                              puede tener más de 50 caracteres.</strong>
                           </div>
-                          <input type="text" formControlName="name" name="name" class="form-control" id="name" placeholder="Tu nombre..."
-                            required>
+                          <input type="text" formControlName="name" name="name" class="form-control" id="name"
+                            placeholder="Tu nombre..." required>
                         </div>
                       </div>
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
-                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('email')?.hasError('required') || formContact.get('email')?.pristine">
-                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El email es obligatorio.</strong>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                            [hidden]="!formContact.get('email')?.hasError('required') || formContact.get('email')?.pristine">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El email es
+                              obligatorio.</strong>
                           </div>
-                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('email')?.hasError('email')">
-                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El email es inválido.</strong>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                            [hidden]="!formContact.get('email')?.hasError('email')">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El email es
+                              inválido.</strong>
                           </div>
-                          <input type="email" formControlName="email" class="form-control" name="email" id="email" placeholder="Tu email..."
-                            required>
+                          <input type="email" formControlName="email" class="form-control" name="email" id="email"
+                            placeholder="Tu email..." required>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('message')?.hasError('required') || formContact.get('message')?.pristine">
-                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El mensaje es obligatorio.</strong>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                            [hidden]="!formContact.get('message')?.hasError('required') || formContact.get('message')?.pristine">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El mensaje es
+                              obligatorio.</strong>
                           </div>
-                          <div class="alert alert-danger alert-dismissible fade show" role="alert" [hidden]="!formContact.get('message')?.hasError('maxlength')">
-                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El mensaje no puede tener más de 500 caracteres.</strong>
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                            [hidden]="!formContact.get('message')?.hasError('maxlength')">
+                            <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El mensaje no
+                              puede tener más de 500 caracteres.</strong>
                           </div>
-                          <textarea class="form-control" formControlName="message" name="message" rows="5" placeholder="Tu mensaje..."
-                            required></textarea>
+                          <textarea class="form-control" formControlName="message" name="message" rows="5"
+                            placeholder="Tu mensaje..." required></textarea>
                         </div>
                       </div>
                       <div class="col-md-12 text-center mt-3">
-                        <button type="submit" class="button button-a button-sm button-rouded" [ngClass]="{'disabled' : formContact.invalid}" [disabled]="formContact.invalid">Enviar mensaje</button>
+                        <button type="submit" class="button button-a button-sm button-rouded"
+                          [ngClass]="{'disabled' : formContact.invalid}" [disabled]="formContact.invalid">Enviar
+                          mensaje</button>
                       </div>
                     </div>
                   </form>
@@ -76,7 +91,13 @@
                 <div class="more-info mt-5">
                   <ul class="list-ico">
                     <li><span class="bi bi-geo-alt"></span><strong>{{contact.address}}</strong></li>
-                    <li class="d-flex"><div><span class="bi bi-envelope"></span><strong>{{contact.email}}</strong></div> <button style="margin-left: 9px;" type="button" class="btn {{currentColorButton}} btn-sm" [cdkCopyToClipboard]="contact.email" (click)="changeIcon()"><i class="bi {{currentIcon}}"></i></button></li>
+                    <li class="d-flex">
+                      <div><span class="bi bi-envelope"></span><strong>{{contact.email}}</strong></div> <button
+                        style="margin-left: 9px;" type="button"
+                        class="btn {{currentColorButton}} btn-sm border-button-copy"
+                        [cdkCopyToClipboard]="contact.email" (click)="changeIcon()"><i
+                          class="bi {{currentIcon}}"></i></button>
+                    </li>
                   </ul>
                 </div>
                 <div class="socials">
@@ -86,8 +107,8 @@
                     <li><a title="LinkedIn" href='{{contact.linkedInURL}}' target="_blank"
                         rel="noopener noreferrer"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a>
                     </li>
-                    <li><a title="CV" href='{{contact.cvURL}}'
-                        target="_blank" rel="noopener noreferrer"><span class="ico-circle"><i class="bi bi-file-person-fill"></i></span></a></li>
+                    <li><a title="CV" href='{{contact.cvURL}}' target="_blank" rel="noopener noreferrer"><span
+                          class="ico-circle"><i class="bi bi-file-person-fill"></i></span></a></li>
                   </ul>
                 </div>
               </div>
