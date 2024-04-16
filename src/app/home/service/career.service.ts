@@ -25,9 +25,14 @@ export class CareerService {
         });
         sessionStorage.setItem('careers', JSON.stringify(data));
       }
+      
+      data.sort((a, b) => b.id - a.id);
+      
       return data;
     } else {
-      return JSON.parse(careers);
+      data = JSON.parse(careers);
+
+      return data.sort((a, b) => b.id - a.id);
     }
   }
 }

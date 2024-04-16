@@ -33,9 +33,14 @@ export class WorkService {
         });
         sessionStorage.setItem('works', JSON.stringify(data));
       }
+
+      data.sort((a, b) => b.id - a.id);
+      
       return data;
     } else {
-      return JSON.parse(works);
+      data = JSON.parse(works);
+
+      return data.sort((a, b) => b.id - a.id);
     }
   }
 }

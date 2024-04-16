@@ -25,9 +25,14 @@ export class CourseService {
         });
         sessionStorage.setItem('courses', JSON.stringify(data));
       }
+
+      data.sort((a, b) => b.id - a.id);
+      
       return data;
     } else {
-      return JSON.parse(courses);
+      data = JSON.parse(courses);
+
+      return data.sort((a, b) => b.id - a.id);
     }
   }
 }

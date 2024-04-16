@@ -1,9 +1,20 @@
 <div class="row font-secondary" id="careers">
   <div data-aos="fade-up">
     <h3 class="resume-title text-uppercase">Carreras y tecnicaturas</h3>
+
     <div *ngIf="careers">
-      <div *ngFor="let career of careers">
+      <div *ngFor="let career of careers.slice(0, showElements)">
         <app-career [career]=career></app-career>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-10">
+            <button class="btn btn-dark btn-sm mx-2" *ngIf="totalElements && showElements < totalElements"
+              (click)="showAll()">Ver
+              más</button>
+          </div>
+        </div>
       </div>
     </div>
 

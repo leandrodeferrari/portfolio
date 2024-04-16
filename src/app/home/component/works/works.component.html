@@ -1,9 +1,20 @@
 <div class="row font-secondary" id="works">
   <div data-aos="fade-up">
     <h3 class="resume-title text-uppercase">Laboral</h3>
+
     <div *ngIf="works">
-      <div *ngFor="let work of works">
+      <div *ngFor="let work of works.slice(0, showElements)">
         <app-work [work]=work></app-work>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-10">
+            <button class="btn btn-dark btn-sm mx-2" *ngIf="totalElements && showElements < totalElements"
+              (click)="showAll()">Ver
+              más</button>
+          </div>
+        </div>
       </div>
     </div>
 

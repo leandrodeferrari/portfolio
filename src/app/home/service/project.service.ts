@@ -34,11 +34,13 @@ export class ProjectService {
         sessionStorage.setItem('projects', JSON.stringify(data));
       }
 
-      data.sort((a, b) => a.id - b.id);
+      data.sort((a, b) => b.id - a.id);
 
       return data;
     } else {
-      return JSON.parse(projects);
+      data = JSON.parse(projects);
+
+      return data.sort((a, b) => b.id - a.id);
     }
   }
 }

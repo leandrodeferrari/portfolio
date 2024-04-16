@@ -9,14 +9,21 @@ import { ProjectService } from '../../service/project.service';
 })
 export class ProjectsComponent {
   projects?: Project[] | null;
+  showElements: number = 3;
+  totalElements: number | null = null;
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
     this.projectService.getAll().then((r) => {
       this.projects = r || null;
+      this.totalElements = this.projects?.length || null;
     }).catch((e) => {
       this.projects = null;
     });
+  }
+
+  showAll() {
+    this.showElements += 1;
   }
 }

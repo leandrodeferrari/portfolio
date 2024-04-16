@@ -25,9 +25,14 @@ export class TechnologyService {
         });
         sessionStorage.setItem('technologies', JSON.stringify(data));
       }
+
+      data.sort((a, b) => b.id - a.id);
+      
       return data;
     } else {
-      return JSON.parse(technologies);
+      data = JSON.parse(technologies);
+
+      return data.sort((a, b) => b.id - a.id);
     }
   }
 }
