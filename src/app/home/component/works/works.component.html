@@ -1,9 +1,33 @@
-<div class="row font-secondary" id="work">
+<div class="row font-secondary" id="works">
   <div data-aos="fade-up">
     <h3 class="resume-title text-uppercase">Laboral</h3>
     <div *ngIf="works">
       <div *ngFor="let work of works">
         <app-work [work]=work></app-work>
+      </div>
+    </div>
+
+    <div *ngIf="!works" class="resume-item">
+      <h4 class="placeholder-wave">
+        <span class="placeholder col-1"></span>
+      </h4>
+
+      <div class="font-secondary placeholder-wave">
+        <div class="row mb-3">
+          <span class="placeholder col-2"></span>
+        </div>
+        <div class="row mb-3">
+          <span class="placeholder col-5"></span>
+        </div>
+        <div class="row mb-2">
+          <span class="placeholder col-12"></span>
+        </div>
+        <div class="row mb-2">
+          <span class="placeholder col-9"></span>
+        </div>
+        <div class="row placeholder-lg">
+          <span class="placeholder col-3"></span>
+        </div>
       </div>
     </div>
   </div>

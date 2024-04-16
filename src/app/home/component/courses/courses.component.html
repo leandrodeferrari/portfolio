@@ -6,5 +6,28 @@
         <app-course [course]=course></app-course>
       </div>
     </div>
+
+    <div *ngIf="!courses" class="resume-item">
+      <h4 class="placeholder-wave">
+        <span class="placeholder col-1"></span>
+      </h4>
+
+      <div class="font-secondary placeholder-wave">
+        <div class="row mb-3">
+          <span class="placeholder col-2"></span>
+        </div>
+        <div class="row mb-3">
+          <span class="placeholder col-5"></span>
+        </div>
+        <div class="row mb-2">
+          <span class="placeholder col-12"></span>
+        </div>
+        <div class="row mb-3">
+          <span class="placeholder col-9"></span>
+        </div>
+      </div>
+
+      <a href="#" tabindex="-1" class="btn btn-dark btn-sm disabled placeholder col-1"></a>
+    </div>
   </div>
 </div>
