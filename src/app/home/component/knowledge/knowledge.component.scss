@@ -38,7 +38,7 @@
 }
 
 .knowledge-box .s-description {
-    color: #4e4e4e;
+    color: #212529;
 }
 
 .pencil-image {
@@ -58,4 +58,16 @@
 
 .crud-icons {
     position: absolute;
+}
+
+.ico-circle-loading {
+    height: 100px;
+    width: 100px;
+    font-size: 2rem;
+    border-radius: 50%;
+    line-height: 1.55;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 0 0 10px white !important;
+    display: block;
 }
