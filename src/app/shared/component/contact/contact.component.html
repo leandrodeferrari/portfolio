@@ -90,13 +90,6 @@
                 <div class="more-info mt-5">
                   <ul class="list-ico">
                     <li><span class="bi bi-geo-alt"></span><strong>{{contact.address}}</strong></li>
-                    <li class="d-flex">
-                      <div><span class="bi bi-envelope"></span><strong>{{contact.email}}</strong></div> <button
-                        style="margin-left: 9px;" type="button"
-                        class="btn {{currentColorButton}} btn-sm border-button-copy"
-                        [cdkCopyToClipboard]="contact.email" (click)="changeIcon()"><i
-                          class="bi {{currentIcon}}"></i></button>
-                    </li>
                   </ul>
                 </div>
                 <div class="socials">
@@ -117,6 +110,11 @@
                       <a title="CV" class="ico-circle" href='{{contact.cvURL}}' target="_blank"
                         rel="noopener noreferrer">
                         <i class="bi bi-file-person-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a title="Copiar email" class="ico-circle" (click)="copyEmail()">
+                        <i class="bi {{currentIcon}}"></i>
                       </a>
                     </li>
                   </ul>

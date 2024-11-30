@@ -17,12 +17,10 @@ export class ContactComponent {
     email: ['', [Validators.required, Validators.email]]
   });
   sent: string = '';
-  currentColorButton: string = 'btn-dark';
-  currentIcon: string = 'bi-copy';
-  private temporalColorButton: string = 'btn-success';
-  private temporalIcon: string = 'bi-check';
-  private darkButton: string = 'btn-dark';
-  private copyIcon: string = 'bi-copy';
+  currentIcon: string = 'bi-envelope';
+  private successIcon: string = 'bi-clipboard-check';
+  private envelopeIcon: string = 'bi-envelope';
+  private errorIcon: string = 'bi-clipboard-x';
 
   constructor(private contactService: ContactService, private formBuilder: FormBuilder) { }
 
@@ -32,18 +30,6 @@ export class ContactComponent {
     }).catch((e) => {
       this.contact = null;
     });
-  }
-
-  changeIcon(): void{
-    if(this.currentIcon === 'bi-copy'){
-      this.currentIcon = this.temporalIcon;
-      this.currentColorButton = this.temporalColorButton;
-
-      setTimeout(() => {
-        this.currentIcon = this.copyIcon;
-        this.currentColorButton = this.darkButton;
-      }, 2000);
-    }
   }
 
   onSubmit(event: Event){
@@ -64,6 +50,31 @@ export class ContactComponent {
         this.sent = 'No';
       }
     });;
+  }
+
+  changeIconSuccess(): void{
+    if(this.currentIcon === 'bi-envelope'){
+      this.currentIcon = this.successIcon;
+
+      setTimeout(() => {
+        this.currentIcon = this.envelopeIcon;
+      }, 4000);
+    }
+  }
+
+  changeIconError(): void{
+    setTimeout(() => {
+      this.currentIcon = this.errorIcon;
+    }, 4000);
+  }
+
+  copyEmail(): void {
+    const email = this.contact?.email || '';
+    navigator.clipboard.writeText(email).then(() => {
+      this.changeIconSuccess();
+    }).catch(() => {
+      this.changeIconError();
+    });
   }
 }
 
