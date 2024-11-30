@@ -1,5 +1,5 @@
 <div *ngIf="work" class="resume-item">
-  <h4>{{work.name}}</h4>
+  <div class="h6 font-tertiary"> <strong>{{work.name}}</strong></div>
   <div *ngIf="work.isCurrentJob">
     <h5><i class="bi bi-calendar3"></i> {{work.startDate}} -<em>Actualidad</em></h5>
   </div>

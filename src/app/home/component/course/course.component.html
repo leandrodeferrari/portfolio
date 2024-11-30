@@ -1,5 +1,5 @@
 <div *ngIf="course" class="resume-item">
-  <h4>{{course.title}}</h4>
+  <div class="h6 font-tertiary"> <strong>{{course.title}}</strong></div>
   <div *ngIf="course.isApproved">
     <h5><i class="bi bi-calendar3"></i> {{course.startDate}} - {{course.endDate}}</h5>
   </div>

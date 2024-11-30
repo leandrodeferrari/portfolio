@@ -10,7 +10,4 @@ export class ProjectComponent {
   @Input('project') project?: Project;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 }

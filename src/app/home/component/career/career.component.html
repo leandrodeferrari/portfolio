@@ -1,5 +1,5 @@
 <div *ngIf="career" class="resume-item">
-  <h4>{{career.careerTypeName}} en {{career.name}}</h4>
+  <div class="h6 font-tertiary"> <strong>{{career.careerTypeName}} en {{career.name}}</strong></div>
   <div *ngIf="career.isFinished">
     <h5><i class="bi bi-calendar3 margin-calendar-icon"></i>{{career.startDate}} - {{career.endDate}}</h5>
   </div>
