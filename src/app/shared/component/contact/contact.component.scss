@@ -66,14 +66,18 @@ button:disabled {
 }
 
 .socials .ico-circle {
+    padding: 0;
+    border: none;
+    overflow: visible;
     height: 40px;
     width: 40px;
     font-size: 1.2rem;
     border-radius: 50%;
-    line-height: 1.6;
+    line-height: 40px;
     margin: 0 15px 0 0;
-    box-shadow: 0 0 0 3px #0d0e0e;
-    transition: all 500ms ease;
+    box-shadow: 0 0 2px 2px #202123;
+    text-align: center;
+    transition: all 100ms ease;
 }
 
 .socials .ico-circle:hover {
