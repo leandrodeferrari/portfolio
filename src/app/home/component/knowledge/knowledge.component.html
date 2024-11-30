@@ -7,61 +7,55 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="technologies" class="row mt-3">
-            <div class="col-md-4" *ngFor="let technology of technologies">
-                <div class="knowledge-box">
-                    <div class="knowledge-ico">
-                        <span class="ico-circle">
-                            <img src='{{technology.logoURL}}' class="img-fluid" alt="logo" width="50px" />
-                        </span>
-                    </div>
-                    <div class="knowledge-content">
-                        <h2 class="s-title font-secondary">{{technology.name}}</h2>
-                    </div>
+
+        <div class="row g-4 m-2" *ngIf="technologies">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let technology of technologies">
+                <div class="tech-card">
+                    <img src="{{technology.logoURL}}" alt="Logo" class="tech-icon" height="60px" width="60px">
+                    <h3 class="tech-name font-secondary">{{technology.name}}</h3>
                 </div>
             </div>
         </div>
 
-        <div *ngIf="!technologies" class="row mt-3">
-            <div class="col-md-4">
-                <div class="knowledge-box">
-                    <div class="knowledge-ico">
+        <div class="row g-4 m-2" *ngIf="!technologies">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="tech-card">
+                    <div>
+                        <img class="img-fluid" alt="" width="300px" />
                         <span class="ico-circle-loading" style="background-color: #707070;">
-                            <img class="img-fluid" alt="" width="300px" />
                         </span>
                     </div>
-                    <div class="knowledge-content placeholder-wave">
+                    <div class="placeholder-wave tech-name mt-2">
                         <span class="placeholder col-5 placeholder-lg"></span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="knowledge-box">
-                    <div class="knowledge-ico">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="tech-card">
+                    <div>
+                        <img class="img-fluid" alt="" width="300px" />
                         <span class="ico-circle-loading" style="background-color: #707070;">
-                            <img class="img-fluid" alt="" width="300px" />
                         </span>
                     </div>
-                    <div class="knowledge-content placeholder-wave">
+                    <div class="placeholder-wave tech-name mt-2">
                         <span class="placeholder col-5 placeholder-lg"></span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="knowledge-box">
-                    <div class="knowledge-ico">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="tech-card">
+                    <div>
+                        <img class="img-fluid" alt="" width="300px" />
                         <span class="ico-circle-loading" style="background-color: #707070;">
-                            <img class="img-fluid" alt="" width="300px" />
                         </span>
                     </div>
-                    <div class="knowledge-content placeholder-wave">
+                    <div class="placeholder-wave tech-name mt-2">
                         <span class="placeholder col-5 placeholder-lg"></span>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

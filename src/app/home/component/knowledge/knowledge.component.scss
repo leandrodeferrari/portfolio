@@ -1,73 +1,42 @@
-.knowledge-box {
-    background-color: #fff;
-    padding: 2.5rem 1.3rem;
-    border-radius: 1rem;
-    margin-bottom: 3rem;
+.tech-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
-.knowledge-box:hover .ico-circle {
-    transition: all 500ms ease;
-    color: #fff;
-    background-color: #212529;
-    box-shadow: 0 0 0 10px #fff;
+.tech-card:hover {
+    transform: translateY(-5px);
 }
 
-.knowledge-box .knowledge-ico {
+.tech-icon {
+    width: 80px;
+    height: 80px;
     margin-bottom: 1rem;
-    color: #212529;
 }
 
-.knowledge-box .ico-circle {
-    transition: all 500ms ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.tech-name {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
 }
 
-.knowledge-box .ico-circle i {
-    line-height: 0;
-    font-size: 40px;
-}
-
-.knowledge-box .s-title {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0.4rem 0;
-}
-
-.knowledge-box .s-description {
-    color: #212529;
-}
-
-.pencil-image {
+.section-title {
+    margin-bottom: 3rem;
     position: relative;
-    margin-right: 0px;
+    display: inline-block;
 }
 
-.trashcan-image {
-    position: relative;
-    margin-right: 0px;
-    margin-left: 0px;
-}
-
-.add-image {
-    position: relative;
-}
-
-.crud-icons {
+.section-title::after {
+    content: '';
     position: absolute;
-}
-
-.ico-circle-loading {
-    height: 100px;
-    width: 100px;
-    font-size: 2rem;
-    border-radius: 50%;
-    line-height: 1.55;
-    margin: 0 auto;
-    text-align: center;
-    box-shadow: 0 0 0 10px white !important;
-    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
 }
