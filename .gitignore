@@ -2,6 +2,7 @@
 
 # App
 /src/environments
+.vscode
 
 # Compiled output
 /dist

@@ -1,5 +1,4 @@
-<section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route mt-0"
-  style="background-image: url(https://res.cloudinary.com/dwirzebm8/image/upload/v1672687495/portfolio/wallpaperflare.com_wallpaper_2_j5ckxl.jpg);">
+<section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route mt-0">
   <div class="overlay-mf"></div>
   <div class="container">
     <div class="row">
@@ -28,7 +27,7 @@
                       <div class="col-md-12 mb-3">
                         <div class="form-group">
                           <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                            [hidden]="!formContact.get('name')?.hasError('required') || formContact.get('name')?.pristine">
+                            [hidden]="!formContact.get('name')?.hasError('required') && !formContact.get('name')?.hasError('whitespace') || formContact.get('name')?.pristine">
                             <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El nombre es
                               obligatorio.</strong>
                           </div>
@@ -60,7 +59,7 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                            [hidden]="!formContact.get('message')?.hasError('required') || formContact.get('message')?.pristine">
+                            [hidden]="!formContact.get('message')?.hasError('required') && !formContact.get('message')?.hasError('whitespace') || formContact.get('message')?.pristine">
                             <i style="margin-right: 5px;" class="bi bi-exclamation-diamond"></i> <strong>El mensaje es
                               obligatorio.</strong>
                           </div>

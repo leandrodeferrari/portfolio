@@ -3,7 +3,17 @@
 }
 
 section {
-    background-image: url(https://res.cloudinary.com/dwirzebm8/image/upload/v1672687495/portfolio/wallpaperflare.com_wallpaper_2_j5ckxl.jpg);
+    background-image: url("https://res.cloudinary.com/dy7gwan0n/image/upload/v1732854398/rahul-mishra-JPL5eIpYugo-unsplash_pwecrp.webp");
+}
+
+input:focus, textarea:focus, button:focus {
+    border-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(73, 80, 87, 0.5);
+}
+
+button:disabled {
+    box-shadow: none;
+    cursor: not-allowed;
 }
 
 .contact-mf {

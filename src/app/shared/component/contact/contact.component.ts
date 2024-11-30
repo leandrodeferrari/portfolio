@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Contact } from '../../model/contact';
 import { Email } from '../../model/email';
 import { ContactService } from '../../service/contact.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -12,8 +12,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class ContactComponent {
   contact?: Contact | null;
   formContact = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.maxLength(50)]],
-    message: ['', [Validators.required, Validators.maxLength(500)]],
+    name: ['', [Validators.required, Validators.maxLength(50), noWhitespaceValidator()]],
+    message: ['', [Validators.required, Validators.maxLength(500), noWhitespaceValidator()]],
     email: ['', [Validators.required, Validators.email]]
   });
   sent: string = '';
@@ -65,4 +65,11 @@ export class ContactComponent {
       }
     });;
   }
+}
+
+export function noWhitespaceValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const isWhitespace = (control.value || '').trim().length === 0;
+    return isWhitespace ? { whitespace: true } : null;
+  };
 }
